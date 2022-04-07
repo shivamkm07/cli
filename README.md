@@ -143,12 +143,14 @@ You can install Dapr runtime in airgap (offline) environment using a pre-downloa
 
 Move to the bundle directory and run the following command:
 
+**Linux/MacOS**
+
 ```bash
 # Initializing dapr in airgap Linux environment
 ./dapr init --from-dir .
 ```
 
-For Windows, run the following command:
+**Windows**
 
 ```bash
 # Initializing dapr in airgap Windows environment
