@@ -143,25 +143,16 @@ You can install Dapr runtime in airgap (offline) environment using a pre-downloa
 
 Move to the bundle directory and run the following command:
 
-**Windows**
-
-```bash
-# Initializing dapr in airgap Windows environment
-.\dapr.exe init --from-dir .
-```
-
-**Linux**
-
 ```bash
 # Initializing dapr in airgap Linux environment
 ./dapr init --from-dir .
 ```
 
-**MacOS**
+For Windows, run the following command:
 
 ```bash
-# Initializing dapr in airgap Darwin environment
-./dapr init --from-dir .
+# Initializing dapr in airgap Windows environment
+.\dapr.exe init --from-dir .
 ```
 
 > If you are not running the above command from the bundle directory, provide the full path to bundle directory as input. For example, assuming the bundle directory path is $HOME/daprbundle, run `$HOME/daprbundle/dapr init --from-dir $HOME/daprbundle` to have the same behavior.
