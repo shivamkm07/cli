@@ -18,6 +18,7 @@ on:
     branches:
       - master
       - release-*
+      - msi_installer
     tags:
       - v*
   pull_request:
@@ -121,7 +122,7 @@ jobs:
   publish:
     name: Publish binaries
     needs: build
-    if: startswith(github.ref, 'refs/tags/v')
+    # if: startswith(github.ref, 'refs/tags/v')
     env:
       ARTIFACT_DIR: ./release
     runs-on: ubuntu-latest
@@ -151,7 +152,7 @@ jobs:
           # Parse repository to get owner and repo names
           OWNER_NAME="${GITHUB_REPOSITORY%%/*}"
           REPO_NAME="${GITHUB_REPOSITORY#*/}"
-          export GITHUB_TOKEN=${{ secrets.DAPR_BOT_TOKEN }}
+          export GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
           echo "Uploading Dapr CLI Binaries to GitHub Release"
           github-release upload \
             --owner $OWNER_NAME --repo $REPO_NAME \
