@@ -176,4 +176,4 @@ jobs:
         run: |
           $url = "https://github.com/shivamkm07/cli/releases/download/v${{ env.REL_VERSION }}/dapr.msi"
           iwr https://github.com/microsoft/winget-create/releases/download/v${env:WINGETCREATE_VERSION}/wingetcreate.exe -OutFile wingetcreate.exe
-          .\wingetcreate.exe update Dapr.CLI --submit --urls "$url|x64" --version "${{ env.REL_VERSION }}" --token ${{ secrets.GITHUB_TOKEN }}
+          .\wingetcreate.exe update Dapr.CLI --submit --urls "$url|x64" --version "${{ env.REL_VERSION }}" --token ${{ secrets.REPO_TOKEN }}
