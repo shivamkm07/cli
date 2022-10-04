@@ -167,6 +167,8 @@ jobs:
       WINGETCREATE_VERSION: 1.1.2.0
     runs-on: windows-latest
     steps:
+      - name: Check out code
+        uses: actions/checkout@v2
       - name: Parse release version and set REL_VERSION
         run: python ./.github/scripts/get_release_version.py
       - name: Update winget manifests
