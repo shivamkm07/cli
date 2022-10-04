@@ -172,6 +172,6 @@ jobs:
       - name: Update winget manifests
         shell: pwsh
         run: |
-          $url = "https://github.com/dapr/cli/releases/download/v{REL_VERSION}/dapr.msi"
+          $url = "https://github.com/shivamkm07/cli/releases/download/v{REL_VERSION}/dapr.msi"
           iwr https://github.com/microsoft/winget-create/releases/download/${env:WINGETCREATE_VERSION}/wingetcreate.exe -OutFile wingetcreate.exe
-          .\wingetcreate.exe update Dapr.CLI --submit --urls "$url|x64" --version "${{ env.REL_VERSION }}" --token ${{ secrets.DAPR_BOT_TOKEN }}
+          .\wingetcreate.exe update Dapr.CLI --submit --urls "$url|x64" --version "${{ env.REL_VERSION }}" --token ${{ secrets.GITHUB_TOKEN }}
