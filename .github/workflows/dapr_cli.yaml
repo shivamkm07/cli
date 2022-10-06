@@ -164,6 +164,7 @@ jobs:
   #           --prerelease true \
   #           ${RELEASE_ARTIFACT[*]}
   publish-winget:
+    permissions: write-all
     name: Publish to winget-pkgs
     # needs: publish
     # if: startswith(github.ref, 'refs/tags/v')
