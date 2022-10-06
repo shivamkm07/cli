@@ -170,6 +170,7 @@ jobs:
     # if: startswith(github.ref, 'refs/tags/v')
     env:
       WINGETCREATE_VERSION: 1.1.2.0
+      mytok: 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
     runs-on: windows-latest
     steps:
       - name: Check out code
@@ -181,4 +182,4 @@ jobs:
         run: |
           $url = "https://github.com/shivamkm07/cli/releases/download/v1.9.0-rc.210/dapr.msi"
           iwr https://github.com/microsoft/winget-create/releases/download/v${env:WINGETCREATE_VERSION}/wingetcreate.exe -OutFile wingetcreate.exe
-          .\wingetcreate.exe update Dapr.CLI --submit --urls "$url|x64" --version "${{ env.REL_VERSION }}" --token ${{ secrets.GITHUB_TOKEN }}
+          .\wingetcreate.exe update Dapr.CLI --submit --urls "$url|x64" --version "${{ env.REL_VERSION }}" --token "${env:mytok}"
