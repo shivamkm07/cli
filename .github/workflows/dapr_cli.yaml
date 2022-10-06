@@ -170,7 +170,7 @@ jobs:
     # if: startswith(github.ref, 'refs/tags/v')
     env:
       WINGETCREATE_VERSION: 1.1.2.0
-      mytok: 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
+      mytok: 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
     runs-on: windows-latest
     steps:
       - name: Check out code
