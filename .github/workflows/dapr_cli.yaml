@@ -181,4 +181,4 @@ jobs:
           } else{
             $PackageIdentifier="Dapr.CLI"
           }
-          .\wingetcreate.exe update "$PackageIdentifier" --submit --urls "$url|x64" --version "${{ env.REL_VERSION }}" --token "${{ secrets.MY_TOKEN }}"
+          .\wingetcreate.exe update "$PackageIdentifier" --submit --urls "$url|x64" --version "${{ env.REL_VERSION }}" --token "${{ secrets.OTHER_TOKEN }}"
