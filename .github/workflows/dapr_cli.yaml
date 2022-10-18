@@ -18,13 +18,13 @@ on:
     branches:
       - master
       - release-*
+      - test_winget_manifests2
     tags:
       - v*
   pull_request:
     branches:
       - master
       - release-*
-      - test_winget_manifests2
 jobs:
   # build:
   #   name: Build ${{ matrix.target_os }}_${{ matrix.target_arch }} binaries
