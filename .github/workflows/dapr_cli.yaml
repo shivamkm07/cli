@@ -179,4 +179,4 @@ jobs:
           } else{
             $PackageIdentifier="Dapr.CLI"
           }
-          .\wingetcreate.exe update "$PackageIdentifier" --submit --urls "$url|x64" --version "${{ env.REL_VERSION }}" --token "${{ secrets.DAPR_BOT_TOKEN }}"
+          .\wingetcreate.exe update "$PackageIdentifier" --submit --urls "$url|x64" --version "${{ env.REL_VERSION }}" --token "${{ secrets.GITHUB_TOKEN }}"
