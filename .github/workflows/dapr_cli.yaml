@@ -171,6 +171,12 @@ jobs:
         uses: actions/checkout@v2
       - name: Parse release version and set REL_VERSION
         run: python ./.github/scripts/get_release_version.py
+      - task: UseDotNet@2
+        displayName: 'Install .NET Runtime'
+        inputs:
+          packageType: sdk
+          version: '6.x'
+          installationPath: '$(ProgramFiles)\dotnet'
       - name: Update winget manifests
         shell: pwsh
         run: |
